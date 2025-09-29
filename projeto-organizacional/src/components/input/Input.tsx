@@ -1,9 +1,9 @@
-// components/Input.tsx
 import React from "react";
+import Styles from '@/components/input/Input.module.css'
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  width?: string;  // Exemplo: "w-full", "w-64"
-  height?: string; // Exemplo: "h-10", "h-12"
+  width?: string;
+  height?: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -19,14 +19,11 @@ const Input: React.FC<InputProps> = ({
       type={type}
       placeholder={placeholder}
       className={`
-        px-3 py-2
-        rounded-lg
-        border border-purple-500
-        bg-gray-950 text-white
-        placeholder-gray-500
-        focus:outline-none focus:ring-1 focus:ring-purple-500
-        ${width} ${height} ${className}
-      `}
+        ${Styles.input}
+        ${width} 
+        ${height} 
+        ${className}
+        `}
       {...props}
     />
   );

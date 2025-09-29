@@ -22,15 +22,22 @@
 .bg-custom {
   background-image: url('/bg.svg');
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: cent er;
   background-size: cover;
 }
 
 .title{
-    color: white;
+    color: #e9e9e9;
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
     margin-bottom: 20px;
+}
+
+.text{
+    color: #a0a0a0;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 5px 10px ;
 }
 
 .formContainer{
@@ -51,5 +58,5 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 10px;
 }
