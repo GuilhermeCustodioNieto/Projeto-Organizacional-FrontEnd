@@ -7,7 +7,9 @@ export default function Register() {
         <div className={Styles.pageContainer}>
             <div className={`${Styles.cardContainer} ${Styles["bg-custom"]}`}>
                 <div className={Styles.formContainer}>
-                    <h1 className={Styles.title}>Cadastro</h1>
+                    <div className={Styles.org}>
+                        <h1 className={Styles.title}>Cadastro</h1>
+                    </div>
                     <div>
 
                         <div className={Styles.inputs}>
@@ -41,9 +43,9 @@ export default function Register() {
                             
                             
                         </div>
-                        <div>
+                        <div className={Styles.inputs}>
                             <h2>futurop botao</h2>
-                            <p>Já Possui uma Conta?<span>clique aqui</span></p>
+                            <p className={Styles.link}>Já Possui uma Conta? <a className={Styles.linkA} href='http://localhost:3000'>Clique Aqui</a></p>
                         </div>
                     </div>
                 </div>
