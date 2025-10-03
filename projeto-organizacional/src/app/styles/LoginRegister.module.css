@@ -7,8 +7,6 @@
     background-color: #1d1d1d;
 }
 
-/* background: #232423;
-    background: linear-gradient(-65deg, rgba(35, 36, 35, 1) 100%, rgba(29, 29, 29, 1) 0%); */
 .cardContainer{
     height: 700px;
     width: 1200px;
@@ -58,33 +56,29 @@
     align-items: start;
 }
 
-.org1{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-}
-
 .inputs{
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 20px;
     margin-top: 10px;
+    width: 100%;
 }
 
 .link{
     font-size: 14px;
     color: #a0a0a0;
     font-weight: 600;
+    text-align: center;
+    margin: 15px 0px;
 }
 
 .linkA{
-    color: #632BC9;
+    color: #5C57C0;
     text-decoration: none;
     font-weight: 600;
 }
 
 .linkA:hover{
-    text-decoration: underline #632BC9;
+    text-decoration: underline #5C57C0;
 }

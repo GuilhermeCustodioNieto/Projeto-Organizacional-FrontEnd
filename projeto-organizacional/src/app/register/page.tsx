@@ -1,8 +1,32 @@
 'use client';
-import  Styles  from '@/app/register/page.module.css';
+import { useRouter } from "next/navigation";
+import  Styles  from '@/app/styles/LoginRegister.module.css';
 import Input from '@/components/input/Input';
+import Button from "@/components/button/Button";
+import Swal from "sweetalert2";
 
 export default function Register() {
+
+    const router = useRouter();
+
+    const handleLogin = () => {
+    // ... lógica de login
+    Swal.fire({
+      title: "Cadastro concluído!",
+      text: "Agora Começa sua Jornada",
+      icon: "success",
+      background: "#1d1d1d",
+      color: "#f5f5f5",
+      confirmButtonText: "Ir para Login",
+      confirmButtonColor: "#634BB0",
+      iconColor: "#834CEB",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        router.push("/login"); 
+      }
+    });
+  };
+
     return ( 
         <div className={Styles.pageContainer}>
             <div className={`${Styles.cardContainer} ${Styles["bg-custom"]}`}>
@@ -44,8 +68,8 @@ export default function Register() {
                             
                         </div>
                         <div className={Styles.inputs}>
-                            <h2>futurop botao</h2>
-                            <p className={Styles.link}>Já Possui uma Conta? <a className={Styles.linkA} href='http://localhost:3000'>Clique Aqui</a></p>
+                            <Button width="95%" height="h-12" onClick={handleLogin}>Criar a Conta</Button>
+                            <p className={Styles.link}>Já Possui uma Conta? <a className={Styles.linkA} href='http://localhost:3000/login'>Clique Aqui</a></p>
                         </div>
                     </div>
                 </div>

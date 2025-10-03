@@ -7,23 +7,25 @@ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
 }
 
 const Input: React.FC<InputProps> = ({
-  type = "text",
-  placeholder = "",
-  width = "w-full",
-  height = "h-12",
+  width,
+  height,
   className = "",
   ...props
 }) => {
+  // Se for tailwind (começa com "w-" ou "h-") aplicamos como classe
+  const widthClass = width?.startsWith("w-") ? width : "";
+  const heightClass = height?.startsWith("h-") ? height : "";
+
+  // Se não for tailwind, aplicamos no style
+  const style: React.CSSProperties = {
+    ...(width && !width.startsWith("w-") ? { width } : {}),
+    ...(height && !height.startsWith("h-") ? { height } : {}),
+  };
+
   return (
     <input
-      type={type}
-      placeholder={placeholder}
-      className={`
-        ${Styles.input}
-        ${width} 
-        ${height} 
-        ${className}
-        `}
+      className={`${Styles.input} ${widthClass} ${heightClass} ${className}`}
+      style={style}
       {...props}
     />
   );
