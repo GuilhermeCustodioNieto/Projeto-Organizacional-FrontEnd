@@ -6,6 +6,7 @@ import Button from "@/components/button/Button";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useState } from "react";
+import api from "@/lib/api";
 
 export default function Register() {
   const [completeName, setCompleteName] = useState("");
@@ -14,10 +15,12 @@ export default function Register() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const router = useRouter();
   function handleLogin() {
-    axios
-      .post("http://localhost:4000/user/login", {
+    api
+      .post("/user/register", {
+        completeName: completeName,
         email: email,
         password: password,
+        confirmPassword: confirmPassword,
       })
       .then((response) => {
         console.log(response);

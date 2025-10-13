@@ -6,6 +6,7 @@ import Button from "@/components/button/Button";
 import Swal from "sweetalert2";
 import axios from "axios";
 import { useState } from "react";
+import api from "@/lib/api";
 
 export default function Login() {
   const router = useRouter();
@@ -13,13 +14,14 @@ export default function Login() {
   const [password, setPassword] = useState("");
 
   function handleLogin() {
-    axios
-      .post("http://localhost:4000/user/login", {
+    api
+      .post("/user/login", {
         email: email,
         password: password,
       })
       .then((response) => {
-        console.log(response);
+        localStorage.setItem("token", response.data.accessToken);
+        localStorage.setItem("user", JSON.stringify(response.data.user));
 
         Swal.fire({
           title: "Login concluído!",
